@@ -1,2 +1,2 @@
 # SmartCash
-Dashboard Financeiro Inteligente
+Dashboard Financeiro Inteligente.
