@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <title>SmartCash — Seu Dashboard Financeiro Inteligente</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">↗</div><div>SmartCash<small>controle inteligente</small></div></div>
+    <div class="nav-label">Workspace</div>
+    <div class="nav-item active"><span class="nav-icon">▦</span> Visão geral</div>
+    <div class="nav-item"><span class="nav-icon">↕</span> Transações</div>
+    <div class="side-note"><strong>✦ Seu dinheiro, sob controle.</strong>Organize suas movimentações e acompanhe sua vida financeira em um só lugar.</div>
+  </aside>
+  <main>
+    <header class="topbar">
+      <div><div class="eyebrow">Seu espaço financeiro</div><h1>Dashboard financeiro</h1></div>
+      <div class="date-pill" id="today"></div>
+    </header>
+    <section>
+      <div class="section-heading"><div><h2>Resumo financeiro</h2><p>Acompanhe o panorama das suas finanças.</p></div></div>
+      <div class="summary">
+        <article class="card income">
+          <div class="card-top"><span>Total de entradas</span><span class="card-icon">↙</span></div>
+          <div class="amount" id="totalIncome">R$ 0,00</div><div class="card-foot">Todo o dinheiro que entrou</div>
+        </article>
+        <article class="card expense">
+          <div class="card-top"><span>Total de saídas</span><span class="card-icon">↗</span></div>
+          <div class="amount" id="totalExpense">R$ 0,00</div><div class="card-foot">Todo o dinheiro que saiu</div>
+        </article>
+        <article class="card balance">
+          <div class="card-top"><span>Saldo disponível</span><span class="card-icon">◈</span></div>
+          <div class="amount" id="totalBalance">R$ 0,00</div><div class="card-foot" id="balanceCaption">Seu resultado acumulado</div>
+        </article>
+      </div>
+    </section>
+    <section class="content-grid">
+      <div class="panel">
+        <h2>Nova transação</h2>
+        <p class="panel-sub">Adicione uma entrada ou saída ao seu controle.</p>
+        <form id="transactionForm" novalidate>
+          <div class="field">
+            <label for="description">DESCRIÇÃO</label>
+            <input id="description" type="text" maxlength="70" placeholder="Ex.: Salário, mercado, aluguel..." autocomplete="off" required>
+          </div>
+          <div class="field">
+            <label for="amount">VALOR (R$)</label>
+            <div class="input-wrap"><span class="currency">R$</span><input id="amount" type="number" min="0.01" step="0.01" placeholder="0,00" required></div>
+            <div class="type-hint">Use um valor positivo para entrada ou negativo para saída.</div>
+          </div>
+          <button class="submit-btn" type="submit">＋ Adicionar transação</button>
+          <div class="form-message" id="formMessage" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+      <div class="panel">
+        <div class="list-head"><div><h2>Extrato de transações</h2><p class="panel-sub" style="margin-bottom:0">Suas movimentações mais recentes.</p></div><span class="count" id="transactionCount">0 itens</span></div>
+        <div class="transactions" id="transactionList"></div>
+      </div>
+    </section>
+    <div class="footer">SmartCash © <span id="year"></span> · Seus dados ficam salvos neste dispositivo.</div>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
